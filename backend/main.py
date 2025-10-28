@@ -183,6 +183,25 @@ CRITICAL RULES:
 - NEVER use raw names like "2W" in segment
 - Handle negative % as positive
 
+
+If this data is given :
+PCVC Auto: Upto 2 years : 69%
+above 2 years:70%
+4W TP,2W COMP,4W COMP and Non Eb 2.5% VLI for year 25-26
+
+then please consider 
+
+PCV Auto  which is PCV 3w as Auto is 3W which is 69% bove 2 years , 70% and remark should be upto 2 years if parsed 69%
+and above 2 years if parsed 70%
+and a
+
+I hope you 
+
+also there is one more column , if CD2 or any other column is given then consider that column as payin value,
+if it contains multiplestuff
+
+for example : COMP and sub column : CD2 contains for example Tata 30%; any other makes : 28%/26%, then consider the lowest value please , so the output should contain for both , 30% and the remark Tata , and 26% , in the remark other make 
+
 Return ONLY JSON array, no markdown.
 """
        
