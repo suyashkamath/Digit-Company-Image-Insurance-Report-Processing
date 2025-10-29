@@ -31,7 +31,7 @@ document.getElementById('process-button').addEventListener('click', async () => 
 
     try {
         console.log('🚀 Sending request to backend...');
-        const response = await fetch('http://localhost:8000/process', {
+        const response = await fetch('https://digit-company-image-insurance-report.onrender.com/process'/process', {
             method: 'POST',
             body: formData
         });
@@ -163,3 +163,4 @@ document.getElementById('process-button').addEventListener('click', async () => 
         document.getElementById('error-message').classList.remove('hidden');
     }
 });
+
