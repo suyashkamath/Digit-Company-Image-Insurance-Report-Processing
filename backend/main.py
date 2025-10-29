@@ -41,7 +41,7 @@ app = FastAPI(title="Insurance Policy Processing System")
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://digit-image-report.vercel.app"],  # Your frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -489,3 +489,4 @@ if __name__ == "__main__":
     import uvicorn
     logger.info("🚀 Starting server at http://localhost:8000")
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
