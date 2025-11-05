@@ -202,6 +202,26 @@ if it contains multiplestuff
 
 for example : COMP and sub column : CD2 contains for example Tata 30%; any other makes : 28%/26%, then consider the lowest value please , so the output should contain for both , 30% and the remark Tata , and 26% , in the remark other make 
 
+Also note: wherever you find out the Payrate , but if it lies in range of 0 to 100 % then please consider it 
+For example , PO or can say payrate can contain these column and under it , it contains the value , so please confider this also if it contains values 
+
+here is the table
+
+State / Location,Seating Capacity,School Bus – In the name of school and Yellow Bus (Contract transporter),On Contract (Transporter),On Contract (Individual)
+"All of India
+excl Below locations",8 & above,75%,62.5%,62.5%
+Rajasthan and Bengaluru,8 & above,70%,62.5%,62.5%
+"Tamil Nadu, Kerala,
+Rest of KA (KA excl Bengaluru),
+Madhya Pradesh",8 & above,55%,52.5%,50%
+
+
+The above table which I gave it to you was an example , so please consider the payrates wherever it is given , please do it so 
+so please consider the 75% onwards also , please
+and the other columns can be on contract (transporter) and on contract (individual)
+
+Do one thing , please consider wherever you get the payrate ose sense the payrate which is in percentage
+
 Return ONLY JSON array, no markdown.
 """
        
@@ -264,14 +284,14 @@ def determine_lob(segment: str) -> str:
     """Determine LOB from segment"""
     segment_upper = segment.upper()
     
-    if any(kw in segment_upper for kw in ['TW', '2W', 'MC', 'SC', '1+5']):
+    if 'BUS' in segment_upper:
+        return "BUS"
+    elif any(kw in segment_upper for kw in ['TW', '2W', 'MC', 'SC', '1+5']):
         return "TW"
     elif any(kw in segment_upper for kw in ['PVT CAR', 'CAR', 'PCI']):
         return "PVT CAR"
     elif any(kw in segment_upper for kw in ['CV', 'GVW', 'PCV', 'GCV']):
         return "CV"
-    elif 'BUS' in segment_upper:
-        return "BUS"
     elif 'TAXI' in segment_upper:
         return "TAXI"
     elif any(kw in segment_upper for kw in ['MISD', 'TRACTOR']):
